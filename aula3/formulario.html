@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registrar</title>
+</head>
+<body>
+    <button id="dark-mode" onclick="changeTheme()">🌙</button>
+    <div class="card">
+        <h1>Registrar</h1>
+        <input class="texto-simples" type="text" placeholder="Usuário" />
+        <input class="texto-simples" type="email" placeholder="Email" />
+        <input class="texto-simples vermelho" type="password" placeholder="Senha" />
+        <input class="texto-simples vermelho" type="password" placeholder="Repita a senha" /><br>
+        <input type="checkbox">Aceitar os termos<br>
+
+        <button class="botao">Registrar</button>
+        <button class="botao">Voltar</button>
+    </div>
+    <script>
+        const body = document.querySelector('body');
+        const btn_theme = document.getElementById('dark-mode');
+        let change = true;
+
+        function changeTheme () {
+            if (change) {
+                body.classList.add("dark");
+                btn_theme.textContent = "☀️";
+            }
+            else {
+                body.classList.remove("dark");
+                btn_theme.textContent = "🌙";
+            }
+            change = !change;
+        }
+    </script>
+</body>
+</html>

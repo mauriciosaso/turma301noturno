@@ -1,0 +1,122 @@
+:root {
+    --cor-fundo: #b8dee6;
+    --cor-primaria: #1c4064;
+    --cor-secundaria: #2D69A6;
+    --cor-terciaria: #3DC2E0;
+    --cor-ativo: orange;
+}
+
+[class="dark"] {
+    --cor-fundo: #1c4064;
+    --cor-primaria: #b8dee6;
+    --cor-secundaria: #3DC2E0;
+    --cor-terciaria: #2D69A6;
+    --cor-ativo: orange;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
+    font-family: system-ui;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#dark-mode {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 30px;
+    background-color: #00000000;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.texto-simples {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px var(--cor-secundaria);
+    border-radius: 15px;
+    width: 230px;
+    font-size: 16px;
+}
+
+.texto-simples:hover {
+    animation: rotate 0.6s linear;
+    animation-fill-mode: both;
+}
+
+.vermelho {
+    color: var(--cor-secundaria);
+}
+
+.botao {
+    margin: 7px;
+    padding: 8px;
+    width: 90px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+}
+
+.botao:hover {
+    background-color: var(--cor-secundaria);
+    animation: pulse 0.6s infinite;
+    transition: 0.2s;
+    box-shadow: 2px 2px 3px var(--cor-primaria);
+}
+
+.botao:active {
+    background-color: var(--cor-ativo);
+    transition: 0s;
+    color: var(--cor-primaria);
+    transform: scale(1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateX(0px);
+        background-color: #fff;
+    }
+    100% {
+        transform: translateX(500px);
+        background-color: red;
+    }
+}
+
+.card {
+    background-color: var(--cor-terciaria);
+    margin: auto;
+    margin-top: 120px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 30px;
+    width: 350px;
+    padding: 20px;
+    box-shadow: 10px 10px 20px var(--cor-primaria);
+}
+
+@media screen and (max-width: 750px) {
+    .card {
+        width: 400px;
+        padding: 40px;
+    }
+
+    .texto-simples {
+        width: 260px;
+        font-size: 18px;
+    }
+}
