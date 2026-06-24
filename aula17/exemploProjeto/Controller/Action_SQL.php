@@ -62,7 +62,7 @@
 
             $nova_conexao = new Conexao;
 
-            $stmt = $nova_conexao->conectar_banco()->prepare("INSERT INTO livros (nome, descricao, genero, quant_folhas, classificacao) VALUES (:nome, :descricao, :genero, :quant_folhas, :classificao)");
+            $stmt = $nova_conexao->conectar_banco()->prepare("INSERT INTO livros (nome, descricao, genero, quant_folhas, classificacao) VALUES (:nome, :descricao, :genero, :quant_folhas, :classificacao)");
             $stmt->bindParam(":nome", $nome);
             $stmt->bindParam(":descricao", $descricao);
             $stmt->bindParam(":genero", $genero);

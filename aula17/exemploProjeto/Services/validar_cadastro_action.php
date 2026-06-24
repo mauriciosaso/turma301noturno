@@ -7,7 +7,7 @@
     $novo_livro = new Livros;
     $nova_insercao = new Action_SQL;
 
-    if(isset($_POST['cadastrar'])){
+    if(isset($_POST['enviar'])){
 
         $nome = $_POST['nome'];
         $descricao = $_POST['descricao'];
