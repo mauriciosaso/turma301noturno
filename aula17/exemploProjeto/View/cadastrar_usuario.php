@@ -18,11 +18,11 @@
 
         ?>
 
-        <form action="../Services/validar_cadastro_action.php" method="post">
+        <form action="../Services/validar_cadastro_action_usuario.php" method="post">
 
             <div> 
 
-                <h1 style="text-align: center; margin-top: 3%">Cadastro de Livros</h1>
+                <h1 style="text-align: center; margin-top: 3%">Cadastro de Usuarios</h1>
 
             </div>
 
@@ -30,15 +30,15 @@
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Nome do livro</label>
+                    <label class="form-label">Nome</label>
                     <input type="text" class="form-control" placeholder="Nome do livro..." name="nome">
 
                 </div>
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Genero</label>
-                    <input type="text" class="form-control" placeholder="Genero..." name="genero">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" name="email">
 
                 </div>
                 
@@ -49,26 +49,15 @@
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Quantidade de folhas</label>
-                    <input type="text" class="form-control" placeholder="Quantidade de folhas..." name="quant_folhas">
+                    <label class="form-label">Senha</label>
+                    <input type="password" class="form-control" name="senha">
 
                 </div>
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Classificação</label>
-                    <input type="text" class="form-control" placeholder="Classificação..." name="classificacao">
-
-                </div>
-
-            </div>
-
-            <div style="margin-top: 3%;" class="row">
-
-                <div class="col-md-12">
-
-                    <label class="form-label">Descrição</label>
-                    <textarea name="descricao" rows="4" placeholder="Escreva a descrição do livro aqui" class="form-control"></textarea>
+                    <label class="form-label">CPF</label>
+                    <input type="text" class="form-control" placeholder="CPF" name="cpf">
 
                 </div>
 

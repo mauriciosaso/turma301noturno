@@ -30,7 +30,7 @@
 
                 $nova_conexao = new Conexao;
 
-                $stmt = $nova_conexao->conectar_banco()->prepare("SELECT FROM livros WHERE id = :id");
+                $stmt = $nova_conexao->conectar_banco()->prepare("SELECT * FROM livros WHERE id = :id");
                 $stmt->bindParam(":id", $id);
                 $stmt->execute();
 

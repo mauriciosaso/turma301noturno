@@ -1,8 +1,8 @@
 <?php
 
-    require "../Controller/Action_SQL.php";
+    require "../Controller/Action_SQL_usuarios.php";
 
-    $nova_selecao = new Action_SQL;
+    $nova_selecao = new Action_SQL_usuarios;
     $resultado = $nova_selecao->selecionar();
 
 ?>
@@ -34,10 +34,9 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Genero</th>
-                    <th scope="col">Classificação</th>
-                    <th scope="col">Quantidade de Folhas</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Senha</th>
+                    <th scope="col">CPF</th>
                     <th scope="col">Ações</th>    
                 </tr>
             </thead>
@@ -47,14 +46,13 @@
                 <tr>
                     <th> <?= $row['id']; ?> </th>
                     <td> <?= $row['nome']; ?> </td>
-                    <td> <?= $row['descricao']; ?> </td>
-                    <td> <?= $row['genero']; ?> </td>
-                    <td> <?= $row['classificacao']; ?> </td>
-                    <td> <?= $row['quant_folhas']; ?> </td>
+                    <td> <?= $row['email']; ?> </td>
+                    <td> <?= $row['senha']; ?> </td>
+                    <td> <?= $row['cpf']; ?> </td>
                     <td> 
                         
-                        <a href="../View/editar_livro.php?id=<?= $row['id']; ?>" class="btn btn-primary"> Editar </a>
-                        <a href="../Services/deletar_action.php?id=<?= $row['id']; ?>" onclick="return confirm('Você tem certeza que quer deletar?')" class="btn btn-danger"> Deletar </a>
+                        <a href="../View/editar_usuario.php?id=<?= $row['id']; ?>" class="btn btn-primary"> Editar </a>
+                        <a href="../Services/deletar_action_usuario.php?id=<?= $row['id']; ?>" onclick="return confirm('Você tem certeza que quer deletar?')" class="btn btn-danger"> Deletar </a>
 
                     </td>
                 </tr>

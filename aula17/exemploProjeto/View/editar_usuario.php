@@ -1,3 +1,15 @@
+<?php
+
+    require "../Controller/Action_SQL_usuarios.php";
+    $nova_edicao = new Action_SQL_usuarios;
+
+    $id = $_GET['id'];
+
+    $requisicao = $nova_edicao->selecionar_id($id);
+    $resultado = $requisicao->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -12,17 +24,13 @@
 
     <div class="container">
 
-        <?php
+        <form action="../Services/validar_editar_action_usuarios.php" method="post">
 
-            require "../Includes/topo.php";
-
-        ?>
-
-        <form action="../Services/validar_cadastro_action.php" method="post">
+            <input type="hidden" name="id" value="<?= $id ?>">
 
             <div> 
 
-                <h1 style="text-align: center; margin-top: 3%">Cadastro de Livros</h1>
+                <h1 style="text-align: center; margin-top: 3%">Editar Usuarios</h1>
 
             </div>
 
@@ -31,14 +39,14 @@
                 <div class="col-md-6">
 
                     <label class="form-label">Nome do livro</label>
-                    <input type="text" class="form-control" placeholder="Nome do livro..." name="nome">
+                    <input type="text" class="form-control" name="nome" value="<?= htmlspecialchars($resultado['nome']) ?>">
 
                 </div>
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Genero</label>
-                    <input type="text" class="form-control" placeholder="Genero..." name="genero">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" value="<?= htmlspecialchars($resultado['email']) ?>">
 
                 </div>
                 
@@ -49,26 +57,15 @@
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Quantidade de folhas</label>
-                    <input type="text" class="form-control" placeholder="Quantidade de folhas..." name="quant_folhas">
+                    <label class="form-label">Senha</label>
+                    <input type="text" class="form-control" name="senha" value="<?= htmlspecialchars($resultado['senha']) ?>">
 
                 </div>
 
                 <div class="col-md-6">
 
-                    <label class="form-label">Classificação</label>
-                    <input type="text" class="form-control" placeholder="Classificação..." name="classificacao">
-
-                </div>
-
-            </div>
-
-            <div style="margin-top: 3%;" class="row">
-
-                <div class="col-md-12">
-
-                    <label class="form-label">Descrição</label>
-                    <textarea name="descricao" rows="4" placeholder="Escreva a descrição do livro aqui" class="form-control"></textarea>
+                    <label class="form-label">CPF</label>
+                    <input type="text" class="form-control" name="cpf" value="<?= htmlspecialchars($resultado['cpf']) ?>">
 
                 </div>
 
