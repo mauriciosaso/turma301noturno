@@ -16,6 +16,9 @@
             <a class="nav-link active" aria-current="page" href="cadastrar_livro.php">Cadastro de Livros</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="enviar_email.php">Enviar email</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="">Sobre</a>
         </li>
         <li class="nav-item">
