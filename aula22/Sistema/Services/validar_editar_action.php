@@ -24,6 +24,36 @@
         $editar_regiao->setPEC($PEC_valor);
 
     }
+    
+    if(isset($_POST['enviar2'])){
+
+        $id = $_POST['id'];
+        $pais = $_POST['pais'];
+        $estado = $_POST['estado'];
+        $cidade = $_POST['cidade'];
+
+        if(empty(trim($pais))){
+
+            echo "<script> alert('Campo pais em branco');window.location.href='../View/cadastro_JOIN.php'; </script>";
+            exit;
+
+        }
+        if(empty(trim($estado))){
+
+            echo "<script> alert('Campo estado em branco');window.location.href='../View/cadastro_JOIN.php'; </script>";
+            exit;
+
+        }
+        if(empty(trim($cidade))){
+
+            echo "<script> alert('Campo cidade em branco');window.location.href='../View/cadastro_JOIN.php'; </script>";
+            exit;
+
+        }
+
+        $nova_edicao->editar_JOIN($id, $pais, $estado, $cidade);
+
+    }
 
     if($editar_regiao->getPEC() != ""){
 
